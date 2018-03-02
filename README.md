@@ -1,4 +1,6 @@
-![Build status](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard.svg?branch=master)](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard)
+[![Build status](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard.svg?branch=master)](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard)
+
+```
 
 # cryptsetup-javacard
 A JavaCard key manager for Cryptsetup.
