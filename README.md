@@ -1,4 +1,4 @@
-# JavaCard Template project with Gradle
+# Cryptsetup-javacard project with Gradle integration
 
 [![Build Status](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard.svg?branch=master)](https://travis-ci.org/JavaCardSpot-dev/cryptsetup-javacard)
 
