@@ -1,0 +1,90 @@
+    1  sudo apt-get install openssl openssl-dev
+    2  sudo apt-get install openssl 
+    3  ls /usr/bin/openssl 
+    4  which openssl
+    5  sudo apt-get install libssl-dev
+    6  ls /usr/include/openssl/
+    7  java -version
+    8  exit
+    9  klee
+   10  module add test
+   11  sudo apt-get install build-essential curl libcap-dev git cmake libncurses5-dev python-minimal python-pip unzip
+   12  deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.4 main 
+   13  wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - 
+   14  sudo apt-get update
+   15  sudo apt-get install clang-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-tools
+   16  cd ~/Downloads/
+   17  ls
+   18  cd TermProject/
+   19  ls
+   20  git clone --recursive git@github.com:crocs-muni/javacard-gradle-template-edu.git javacard-calculator-wrapper
+   21  ls
+   22  git clone --recursive hiteshlilhare@github.com:crocs-muni/javacard-gradle-template-edu.git javacard-calculator-wrapper
+   23  git clone --recursive git@github.com:crocs-muni/javacard-gradle-template-edu.git javacard-calculator-wrapper
+   24  git clone https://github.com/crocs-muni/javacard-gradle-template-edu.git
+   25  ls
+   26  cd javacard-gradle-template-edu/`
+   27  cd javacard-gradle-template-edu/
+   28  ls -altra
+   29  ./gradle
+   30  gradlew
+   31  ./gradlew check --info
+   32  ls
+   33  ls libs-sdks/
+   34  ls
+   35  rm -rf .git
+   36  rm -rf libs-sdks
+   37  git init
+   38  git add .
+   39  git commit -m "Initial Commit"
+   40  git commit -m 'Initial Commit'
+   41  git config --global user.email hitesh.lilhare@gmail.com
+   42  git config --global user.name hiteshlilhare
+   43  git commit -m 'Initial Commit'
+   44  git submodule add https://github.com/martinpaljak/oracle_javacard_sdks.git libs-sdks
+   45  ls
+   46  git add libs-sdks
+   47  git commit -m 'SDKs added'
+   48  ./gradlew test
+   49  ls
+   50  more build.gradle
+   51  more settings.gradle 
+   52  ls ../cryptsetup-javacard/
+   53  ls ../cryptsetup-javacard/JCKeyStorage/
+   54  ls ../cryptsetup-javacard/JCKeyStorage/src/
+   55  more ../cryptsetup-javacard/JCKeyStorage/src/applets/KeyStorageApplet.java 
+   56  ls
+   57* cd applet/cd
+   58  ls
+   59  more build.gradle 
+   60  ls
+   61  ls src/
+   62  cd ..
+   63  ./gradlew test
+   64  ./gradlew jckeystorage
+   65  ./gradlew test
+   66  ./gradlew applets
+   67  ./gradlew jckeystorage
+   68  ./gradlew javacard
+   69  ./gradlew task
+   70  ./gradlew build
+   71  ./gradlew --all
+   72  ./gradlew buildJavaCard --info
+   73  /bin/rm -rf applet/src
+   74  git submodule add https://github.com/JavaCardSpot-dev/cryptsetup-javacard.git applet/project
+   75  ls
+   76  cd applet/
+   77  ls
+   78  cd project/
+   79  ls
+   80  cd -
+   81  cd ..
+   82  ./gradlew build
+   83  ./gradlew task
+   84  ./gradlew buildJavaCard --info
+   85  ./gradlew check --info
+   86  ./gradlew task
+   87  ./gradlew --all
+   88  ./gradlew assemble
+   89  history
+   90  history > gradle-template-setup.txt

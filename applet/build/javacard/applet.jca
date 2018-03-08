@@ -1,0 +1,1855 @@
+// converted by version  [v3.0.4]
+// on Thu Mar 08 18:40:29 IST 2018
+
+.package applets {
+	.aid 0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9;
+	.version 0.1;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.5;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.5;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x9 1.0;		//javacardx/apdu
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.5;		//javacardx/crypto
+	}
+
+	.applet {
+		0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x1:0x2 KeyStorageApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef 1.11 KeyStorageApplet$HMAC/digest;
+		// 1
+		instanceFieldRef short KeyStorageApplet$HMAC/digestBlockSize;
+		// 2
+		instanceFieldRef byte[] KeyStorageApplet$HMAC/keyBuffer;
+		// 3
+		instanceFieldRef KeyStorageApplet$HMAC KeyStorageApplet$HMACVerifier/hmac;
+		// 4
+		instanceFieldRef byte[] KeyStorageApplet$HMACVerifier/auxBuffer;
+		// 5
+		instanceFieldRef short KeyStorageApplet/state;
+		// 6
+		instanceFieldRef byte[] KeyStorageApplet/auxBuffer;
+		// 7
+		instanceFieldRef 2.9 KeyStorageApplet/masterPassword;
+		// 8
+		instanceFieldRef 1.16 KeyStorageApplet/signingKeyPair;
+		// 9
+		instanceFieldRef 1.15 KeyStorageApplet/signature;
+		// 10
+		instanceFieldRef 1.16 KeyStorageApplet/dhKeyPair;
+		// 11
+		instanceFieldRef 1.19 KeyStorageApplet/dhPubKey;
+		// 12
+		instanceFieldRef 1.18 KeyStorageApplet/dhPrivKey;
+		// 13
+		instanceFieldRef 1.22 KeyStorageApplet/sessKeyAgreement;
+		// 14
+		instanceFieldRef 1.20 KeyStorageApplet/cipherKey;
+		// 15
+		instanceFieldRef 4.1 KeyStorageApplet/cipher;
+		// 16
+		instanceFieldRef KeyStorageApplet$HMAC KeyStorageApplet/mac;
+		// 17
+		instanceFieldRef KeyStorageApplet$HMACVerifier KeyStorageApplet/macVerifier;
+		// 18
+		instanceFieldRef 1.14 KeyStorageApplet/secureRandom;
+		// 19
+		instanceFieldRef byte[] KeyStorageApplet/keyStore;
+		// 20
+		instanceFieldRef short KeyStorageApplet/seqNum;
+		// 21
+		virtualMethodRef 2.10.16()S;		// getOffsetCdata()S
+		// 22
+		staticMethodRef KeyStorageApplet/fillPubKey([BS)S;
+		// 23
+		virtualMethodRef 2.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 24
+		staticMethodRef 2.16.3([BSSB)S;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+		// 25
+		staticMethodRef KeyStorageApplet/dhHandshake(Ljavacard/framework/APDU;)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 26
+		virtualMethodRef KeyStorageApplet/InsCommand(Ljavacard/framework/APDU;)S;
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+		// 27
+		staticMethodRef 2.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 28
+		virtualMethodRef 1.11.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 29
+		.classRef 2.9;		// javacard/framework/OwnerPIN
+		// 30
+		staticMethodRef 2.9.0(BB)V;		// javacard/framework/OwnerPIN.<init>(BB)V
+		// 31
+		staticMethodRef KeyStorageApplet$HMAC/xorBuffer([BSSB)V;
+		// 32
+		virtualMethodRef 2.9.8([BSB)V;		// update([BSB)V
+		// 33
+		.classRef 1.16;		// javacard/security/KeyPair
+		// 34
+		staticMethodRef 1.16.0(BS)V;		// javacard/security/KeyPair.<init>(BS)V
+		// 35
+		virtualMethodRef 1.11.5([BSS)V;		// update([BSS)V
+		// 36
+		virtualMethodRef 1.16.1()V;		// genKeyPair()V
+		// 37
+		staticMethodRef 1.15.0(BZ)Ljavacard/security/Signature;;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+			.descriptor	Ljavacard/security/Signature;	1.15;
+
+		// 38
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 39
+		virtualMethodRef 1.16.2()Ljavacard/security/PrivateKey;;		// getPrivate()Ljavacard/security/PrivateKey;
+			.descriptor	Ljavacard/security/PrivateKey;	1.2;
+
+		// 40
+		virtualMethodRef 1.15.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 41
+		virtualMethodRef 1.11.3()B;		// getLength()B
+		// 42
+		virtualMethodRef 1.16.3()Ljavacard/security/PublicKey;;		// getPublic()Ljavacard/security/PublicKey;
+			.descriptor	Ljavacard/security/PublicKey;	1.3;
+
+		// 43
+		.classRef 1.19;		// javacard/security/ECPublicKey
+		// 44
+		staticMethodRef 2.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 45
+		.classRef 1.18;		// javacard/security/ECPrivateKey
+		// 46
+		virtualMethodRef KeyStorageApplet$HMAC/sign([BSS[BS)V;
+		// 47
+		staticMethodRef KeyStorageApplet/setDHKeyParams()V;
+		// 48
+		staticMethodRef 1.22.0(BZ)Ljavacard/security/KeyAgreement;;		// javacard/security/KeyAgreement.getInstance(BZ)Ljavacard/security/KeyAgreement;
+			.descriptor	Ljavacard/security/KeyAgreement;	1.22;
+
+		// 49
+		virtualMethodRef KeyStorageApplet$HMAC/getLength()S;
+		// 50
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 51
+		.classRef 1.20;		// javacard/security/AESKey
+		// 52
+		staticMethodRef KeyStorageApplet/access$000([BS[BSS)Z;
+		// 53
+		staticMethodRef 4.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	4.1;
+
+		// 54
+		staticMethodRef 2.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 55
+		.classRef KeyStorageApplet$HMAC;
+		// 56
+		staticMethodRef 1.11.0(BZ)Ljavacard/security/MessageDigest;;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+		// 57
+		staticMethodRef KeyStorageApplet$HMAC/<init>(Ljavacard/security/MessageDigest;S)V;
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+		// 58
+		staticMethodRef KeyStorageApplet/resetSession()V;
+		// 59
+		.classRef KeyStorageApplet$HMACVerifier;
+		// 60
+		staticMethodRef KeyStorageApplet$HMACVerifier/<init>(Lapplets/KeyStorageApplet$HMAC;)V;
+		// 61
+		virtualMethodRef 2.3.3()Z;		// selectingApplet()Z
+		// 62
+		staticMethodRef 1.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	1.14;
+
+		// 63
+		virtualMethodRef 2.10.6()S;		// setIncomingAndReceive()S
+		// 64
+		virtualMethodRef 2.10.1()[B;		// getBuffer()[B
+		// 65
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_G_X;
+		// 66
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_G_Y;
+		// 67
+		staticMethodRef 2.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 68
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_P;
+		// 69
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_A;
+		// 70
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_B;
+		// 71
+		staticFieldRef byte[] KeyStorageApplet/EC_FP_R;
+		// 72
+		.classRef KeyStorageApplet;
+		// 73
+		staticMethodRef KeyStorageApplet/<init>([BSB)V;
+		// 74
+		virtualMethodRef 2.3.1()V;		// register()V
+		// 75
+		.classRef 1.9;		// javacard/security/RSAPublicKey
+		// 76
+		staticMethodRef KeyStorageApplet/writeShort([BSS)V;
+		// 77
+		virtualMethodRef 2.10.15()S;		// getIncomingLength()S
+		// 78
+		staticMethodRef KeyStorageApplet/readShort([BS)S;
+		// 79
+		virtualMethodRef 1.22.1(Ljavacard/security/PrivateKey;)V;		// init(Ljavacard/security/PrivateKey;)V
+			.descriptor	Ljavacard/security/PrivateKey;	1.2;
+
+		// 80
+		virtualMethodRef 1.22.3([BSS[BS)S;		// generateSecret([BSS[BS)S
+		// 81
+		virtualMethodRef KeyStorageApplet$HMAC/setKey([BSS)V;
+		// 82
+		staticFieldRef byte[] KeyStorageApplet/KEY_LABEL_ENC;
+		// 83
+		staticFieldRef byte[] KeyStorageApplet/KEY_LABEL_AUTH;
+		// 84
+		virtualMethodRef 1.15.2()S;		// getLength()S
+		// 85
+		virtualMethodRef 1.15.5([BSS[BS)S;		// sign([BSS[BS)S
+		// 86
+		staticMethodRef 2.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 87
+		virtualMethodRef KeyStorageApplet$HMACVerifier/verify([BSS[BS)Z;
+		// 88
+		virtualMethodRef 4.1.4(Ljavacard/security/Key;B[BSS)V;		// init(Ljavacard/security/Key;B[BSS)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 89
+		virtualMethodRef 4.1.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 90
+		staticMethodRef KeyStorageApplet/processCommand([BS)S;
+		// 91
+		virtualMethodRef 1.14.1([BSS)V;		// generateData([BSS)V
+		// 92
+		virtualMethodRef 2.9.1([BSB)Z;		// check([BSB)Z
+		// 93
+		staticMethodRef KeyStorageApplet/arraysEqual([BS[BSS)Z;
+		// 94
+		staticMethodRef KeyStorageApplet/findEntry([BS)S;
+		// 95
+		staticMethodRef KeyStorageApplet/findEmptyEntry()S;
+		// 96
+		staticMethodRef 2.8.1()V;		// javacard/framework/JCSystem.beginTransaction()V
+		// 97
+		staticMethodRef KeyStorageApplet/writeEntry(S[BS[BSS)V;
+		// 98
+		staticMethodRef 2.8.2()V;		// javacard/framework/JCSystem.commitTransaction()V
+		// 99
+		staticMethodRef KeyStorageApplet/readEntry(S[BS)S;
+		// 100
+		staticMethodRef KeyStorageApplet/deleteEntry(S)V;
+		// 101
+		staticMethodRef KeyStorageApplet/commandAuth([BSSS)S;
+		// 102
+		staticMethodRef KeyStorageApplet/commandChangePw([BSSS)S;
+		// 103
+		staticMethodRef KeyStorageApplet/commandGenKey([BSSS)S;
+		// 104
+		staticMethodRef KeyStorageApplet/commandStoreKey([BSSS)S;
+		// 105
+		staticMethodRef KeyStorageApplet/commandLoadKey([BSSS)S;
+		// 106
+		staticMethodRef KeyStorageApplet/commandDelKey([BSSS)S;
+		// 107
+		staticMethodRef KeyStorageApplet/commandClose([BSSS)S;
+	}
+
+	.class public KeyStorageApplet$HMAC 0 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private final 1.11 digest 0;		// Ljavacard/security/MessageDigest;
+			private final byte[] keyBuffer 1;		// [B
+			private final short digestBlockSize 2;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getLength()S;
+			setKey([BSS)V;
+			clearKey()V;
+			sign([BSS[BS)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public final getLength()S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					invokevirtual 41;		// getLength()B
+					sreturn;
+		}
+
+		.method public final setKey([BSS)V 2 {
+			.stack 6;
+			.locals 1;
+
+				L0:	getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					invokevirtual 41;		// getLength()B
+					sstore 4;
+					sload_3;
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					if_scmpgt L2;
+				L1:	aload_1;
+					sload_2;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					sload_3;
+					invokestatic 44;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sload_3;
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					sload_3;
+					ssub;
+					sconst_0;
+					invokestatic 24;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					goto L3;
+				L2:	getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					aload_1;
+					sload_2;
+					sload_3;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					invokevirtual 28;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sload 4;
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					sload 4;
+					ssub;
+					sconst_0;
+					invokestatic 24;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+				L3:	getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					invokestatic 44;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					bspush 54;
+					invokespecial 31;		// applets/KeyStorageApplet$HMAC.xorBuffer([BSSB)V
+					aload_0;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					bspush 92;
+					invokespecial 31;		// applets/KeyStorageApplet$HMAC.xorBuffer([BSSB)V
+					return;
+		}
+
+		.method public final clearKey()V 3 {
+			.stack 4;
+			.locals 0;
+
+				L0:	getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					arraylength;
+					sconst_0;
+					invokestatic 24;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					return;
+		}
+
+		.method public final sign([BSS[BS)V 4 {
+			.stack 6;
+			.locals 1;
+
+				L0:	getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					invokevirtual 41;		// getLength()B
+					sstore 6;
+					getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					sconst_0;
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					invokevirtual 35;		// update([BSS)V
+					getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					aload_1;
+					sload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokevirtual 28;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					getfield_a_this 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					getfield_s_this 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					invokevirtual 35;		// update([BSS)V
+					getfield_a_this 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					aload 4;
+					sload 5;
+					sload 6;
+					aload 4;
+					sload 5;
+					invokevirtual 28;		// doFinal([BSS[BS)S
+					pop;
+					return;
+		}
+
+		.method public <init>(Ljavacard/security/MessageDigest;S)V 0 {
+			.stack 3;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+				L0:	aload_0;
+					invokespecial 38;		// java/lang/Object.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 0;		// reference applets/KeyStorageApplet$HMAC.digest
+					aload_0;
+					sload_2;
+					putfield_s 1;		// short applets/KeyStorageApplet$HMAC.digestBlockSize
+					aload_0;
+					sconst_2;
+					sload_2;
+					smul;
+					newarray 11;
+					putfield_a 2;		// reference applets/KeyStorageApplet$HMAC.keyBuffer
+					return;
+		}
+
+		.method private xorBuffer([BSSB)V {
+			.stack 4;
+			.locals 1;
+
+				L0:	sload_2;
+					sload_3;
+					sadd;
+					sstore 5;
+				L1:	sload_2;
+					sload 5;
+					if_scmpge L3;
+				L2:	aload_1;
+					sload_2;
+					dup2;
+					baload;
+					sload 4;
+					sxor;
+					bastore;
+					sinc 2 1;
+					goto L1;
+				L3:	return;
+		}
+
+	}
+
+	.class public KeyStorageApplet$HMACVerifier 1 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private final KeyStorageApplet$HMAC hmac 0;		// Lapplets/KeyStorageApplet$HMAC;
+			private final byte[] auxBuffer 1;		// [B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			verify([BSS[BS)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public final verify([BSS[BS)Z 1 {
+			.stack 6;
+			.locals 2;
+
+				L0:	getfield_a_this 3;		// reference applets/KeyStorageApplet$HMACVerifier.hmac
+					aload_1;
+					sload_2;
+					sload_3;
+					getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					sconst_0;
+					invokevirtual 46;		// sign([BSS[BS)V
+				L1:	aload 4;
+					sload 5;
+					getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					sconst_0;
+					getfield_a_this 3;		// reference applets/KeyStorageApplet$HMACVerifier.hmac
+					invokevirtual 49;		// getLength()S
+					invokestatic 52;		// applets/KeyStorageApplet.access$000([BS[BSS)Z
+					sstore 6;
+				L2:	getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					sconst_0;
+					getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					arraylength;
+					sconst_0;
+					invokestatic 24;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					sload 6;
+					sreturn;
+				L3:	astore 7;
+				L4:	getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					sconst_0;
+					getfield_a_this 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					arraylength;
+					sconst_0;
+					invokestatic 24;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					aload 7;
+					athrow;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 0;
+				L3 L4 L3 0;
+			}
+		}
+
+		.method public <init>(Lapplets/KeyStorageApplet$HMAC;)V 0 {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 38;		// java/lang/Object.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 3;		// reference applets/KeyStorageApplet$HMACVerifier.hmac
+					aload_0;
+					aload_1;
+					invokevirtual 49;		// getLength()S
+					sconst_2;
+					invokestatic 54;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 4;		// reference applets/KeyStorageApplet$HMACVerifier.auxBuffer
+					return;
+		}
+
+	}
+
+	.class public KeyStorageApplet 2 extends 2.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private final 2.9 masterPassword 0;		// Ljavacard/framework/OwnerPIN;
+			private final 1.16 signingKeyPair 1;		// Ljavacard/security/KeyPair;
+			private final 1.15 signature 2;		// Ljavacard/security/Signature;
+			private final 1.19 dhPubKey 3;		// Ljavacard/security/ECPublicKey;
+			private final 1.18 dhPrivKey 4;		// Ljavacard/security/ECPrivateKey;
+			private final 1.16 dhKeyPair 5;		// Ljavacard/security/KeyPair;
+			private final 1.22 sessKeyAgreement 6;		// Ljavacard/security/KeyAgreement;
+			private final 1.20 cipherKey 7;		// Ljavacard/security/AESKey;
+			private final 4.1 cipher 8;		// Ljavacardx/crypto/Cipher;
+			private final KeyStorageApplet$HMAC mac 9;		// Lapplets/KeyStorageApplet$HMAC;
+			private final KeyStorageApplet$HMACVerifier macVerifier 10;		// Lapplets/KeyStorageApplet$HMACVerifier;
+			private final 1.14 secureRandom 11;		// Ljavacard/security/RandomData;
+			private final byte[] keyStore 12;		// [B
+			private final byte[] auxBuffer 13;		// [B
+			private short state 14;		// S
+			private short seqNum 15;		// S
+			public static final byte CLA_KEYSTORAGEAPPLET = -80;		// B
+			public static final byte INS_GETPUBKEY = 80;		// B
+			public static final byte INS_HANDSHAKE = 81;		// B
+			public static final byte INS_COMMAND = 82;		// B
+			public static final byte CMD_AUTH = 0;		// B
+			public static final byte CMD_CHANGEPW = 1;		// B
+			public static final byte CMD_GENKEY = 2;		// B
+			public static final byte CMD_STOREKEY = 3;		// B
+			public static final byte CMD_LOADKEY = 4;		// B
+			public static final byte CMD_DELKEY = 5;		// B
+			public static final byte CMD_CLOSE = 6;		// B
+			public static final short RSA_BITS = 1024;		// S
+			public static final short EC_BITS = 192;		// S
+			public static final short SESSION_KEY_LENGTH = 20;		// S
+			public static final short MAC_LENGTH = 32;		// S
+			public static final short SEQNUM_LENGTH = 2;		// S
+			public static final short BLOCK_LENGTH = 16;		// S
+			public static final short IV_LENGTH = 16;		// S
+			public static final byte MAX_PW_TRIES = 5;		// B
+			public static final byte MAX_PW_LEN = 64;		// B
+			public static final short UUID_LENGTH = 40;		// S
+			public static final short MAX_KEY_SIZE = 128;		// S
+			public static final short KEY_ENTRY_SIZE = 169;		// S
+			public static final short MAX_KEY_ENTRIES = 64;		// S
+			public static final short EC_FP_K = 1;		// S
+			public static final byte[] AID 0 = {74,67,75,101,121,83,116,111,114,97,103,101};		// [B
+			public static final byte[] KEY_LABEL_ENC 1 = {-18};		// [B
+			public static final byte[] KEY_LABEL_AUTH 2 = {-86};		// [B
+			public static final byte[] EC_FP_P 3 = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-2,-1,-1,-1,-1,-1,-1,-1,-1};		// [B
+			public static final byte[] EC_FP_A 4 = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-2,-1,-1,-1,-1,-1,-1,-1,-4};		// [B
+			public static final byte[] EC_FP_B 5 = {100,33,5,25,-27,-100,-128,-25,15,-89,-23,-85,114,36,48,73,-2,-72,-34,-20,-63,70,-71,-79};		// [B
+			public static final byte[] EC_FP_G_X 6 = {24,-115,-88,14,-80,48,-112,-10,124,-65,32,-21,67,-95,-120,0,-12,-1,10,-3,-126,-1,16,18};		// [B
+			public static final byte[] EC_FP_G_Y 7 = {7,25,43,-107,-1,-56,-38,120,99,16,17,-19,107,36,-51,-43,115,-7,119,-95,30,121,72,17};		// [B
+			public static final byte[] EC_FP_R 8 = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-103,-34,-8,54,20,107,-55,-79,-76,-46,40,49};		// [B
+			private static final short STATE_IDLE = 0;		// S
+			private static final short STATE_KEY_ESTABILISHED = 1;		// S
+			private static final short STATE_AUTHENTICATED = 2;		// S
+			private static final short AUX_BUFFER_SIZE = 64;		// S
+		}
+
+		.publicMethodTable 6 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+			InsCommand(Ljavacard/framework/APDU;)S;
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 3.0 { 		// javacardx/apdu/ExtendedLength
+			}
+
+		}
+
+		.method public final select()Z 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 58;		// applets/KeyStorageApplet.resetSession()V
+					sconst_1;
+					sreturn;
+		}
+
+		.method public final process(Ljavacard/framework/APDU;)V 7 {
+			.stack 3;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_0;
+					invokevirtual 61;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 63;		// setIncomingAndReceive()S
+					sstore_2;
+					aload_1;
+					invokevirtual 64;		// getBuffer()[B
+					astore_3;
+					aload_3;
+					sconst_0;
+					baload;
+					bspush -80;
+					if_scmpeq L4;
+				L3:	sspush 28160;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_3;
+					sconst_1;
+					baload;
+					stableswitch L13 80 82 L5 L6 L9;
+				L5:	aload_0;
+					aload_3;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					invokespecial 22;		// applets/KeyStorageApplet.fillPubKey([BS)S
+					sstore 4;
+					aload_1;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					sload 4;
+					invokevirtual 23;		// setOutgoingAndSend(SS)V
+					goto L14;
+				L6:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					ifeq L8;
+				L7:	sspush 27014;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	aload_0;
+					aload_1;
+					invokespecial 25;		// applets/KeyStorageApplet.dhHandshake(Ljavacard/framework/APDU;)S
+					sstore 4;
+					aload_1;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					sload 4;
+					invokevirtual 23;		// setOutgoingAndSend(SS)V
+					goto L14;
+				L9:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					sconst_1;
+					if_scmpeq L12;
+				L10:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					sconst_2;
+					if_scmpeq L12;
+				L11:	sspush 27014;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L12:	aload_0;
+					aload_1;
+					invokevirtual 26;		// InsCommand(Ljavacard/framework/APDU;)S
+					sstore 4;
+					aload_1;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					sload 4;
+					invokevirtual 23;		// setOutgoingAndSend(SS)V
+					goto L14;
+				L13:	sspush 27904;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	return;
+		}
+
+		.method private static readShort([BS)S {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					sload_1;
+					sconst_1;
+					sadd;
+					baload;
+					sspush 255;
+					sand;
+					sstore_2;
+					sload_2;
+					bspush 8;
+					sshl;
+					sstore_2;
+					sload_2;
+					aload_0;
+					sload_1;
+					baload;
+					sspush 255;
+					sand;
+					sor;
+					sstore_2;
+					sload_2;
+					sreturn;
+		}
+
+		.method private static writeShort([BSS)V {
+			.stack 4;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					sload_2;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 1 1;
+					sload_2;
+					bspush 8;
+					sshr;
+					sstore_2;
+					aload_0;
+					sload_1;
+					sload_2;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					return;
+		}
+
+		.method private static arraysEqual([BS[BSS)Z {
+			.stack 5;
+			.locals 2;
+
+				L0:	sconst_0;
+					sstore 5;
+					sconst_0;
+					sstore 6;
+				L1:	sload 6;
+					sload 4;
+					if_scmpge L3;
+				L2:	sload 5;
+					aload_0;
+					sload_1;
+					sload 6;
+					sadd;
+					baload;
+					aload_2;
+					sload_3;
+					sload 6;
+					sadd;
+					baload;
+					sxor;
+					sor;
+					sstore 5;
+					sinc 6 1;
+					goto L1;
+				L3:	sload 5;
+					ifne L5;
+				L4:	sconst_1;
+					goto L6;
+				L5:	sconst_0;
+				L6:	sreturn;
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sconst_0;
+					putfield_s 5;		// short applets/KeyStorageApplet.state
+					aload_0;
+					bspush 64;
+					sconst_2;
+					invokestatic 54;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 6;		// reference applets/KeyStorageApplet.auxBuffer
+					aload_0;
+					new 29;		// javacard/framework/OwnerPIN
+					dup;
+					sconst_5;
+					bspush 64;
+					invokespecial 30;		// javacard/framework/OwnerPIN.<init>(BB)V
+					putfield_a 7;		// reference applets/KeyStorageApplet.masterPassword
+					sload_3;
+					ifne L2;
+				L1:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+					goto L3;
+				L2:	getfield_a_this 7;		// reference applets/KeyStorageApplet.masterPassword
+					aload_1;
+					sload_2;
+					sload_3;
+					invokevirtual 32;		// update([BSB)V
+				L3:	aload_0;
+					new 33;		// javacard/security/KeyPair
+					dup;
+					sconst_2;
+					sspush 1024;
+					invokespecial 34;		// javacard/security/KeyPair.<init>(BS)V
+					putfield_a 8;		// reference applets/KeyStorageApplet.signingKeyPair
+					getfield_a_this 8;		// reference applets/KeyStorageApplet.signingKeyPair
+					invokevirtual 36;		// genKeyPair()V
+					aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 37;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putfield_a 9;		// reference applets/KeyStorageApplet.signature
+					getfield_a_this 9;		// reference applets/KeyStorageApplet.signature
+					getfield_a_this 8;		// reference applets/KeyStorageApplet.signingKeyPair
+					invokevirtual 39;		// getPrivate()Ljavacard/security/PrivateKey;
+					sconst_1;
+					invokevirtual 40;		// init(Ljavacard/security/Key;B)V
+					aload_0;
+					new 33;		// javacard/security/KeyPair
+					dup;
+					sconst_5;
+					sspush 192;
+					invokespecial 34;		// javacard/security/KeyPair.<init>(BS)V
+					putfield_a 10;		// reference applets/KeyStorageApplet.dhKeyPair
+					aload_0;
+					getfield_a_this 10;		// reference applets/KeyStorageApplet.dhKeyPair
+					invokevirtual 42;		// getPublic()Ljavacard/security/PublicKey;
+					checkcast 0 43;		// T_CLASSORINTERFACE javacard/security/ECPublicKey
+					putfield_a 11;		// reference applets/KeyStorageApplet.dhPubKey
+					aload_0;
+					getfield_a_this 10;		// reference applets/KeyStorageApplet.dhKeyPair
+					invokevirtual 39;		// getPrivate()Ljavacard/security/PrivateKey;
+					checkcast 0 45;		// T_CLASSORINTERFACE javacard/security/ECPrivateKey
+					putfield_a 12;		// reference applets/KeyStorageApplet.dhPrivKey
+					aload_0;
+					invokespecial 47;		// applets/KeyStorageApplet.setDHKeyParams()V
+					aload_0;
+					sconst_2;
+					sconst_0;
+					invokestatic 48;		// javacard/security/KeyAgreement.getInstance(BZ)Ljavacard/security/KeyAgreement;
+					putfield_a 13;		// reference applets/KeyStorageApplet.sessKeyAgreement
+					aload_0;
+					bspush 14;
+					sspush 256;
+					sconst_0;
+					invokestatic 50;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 51;		// T_CLASSORINTERFACE javacard/security/AESKey
+					putfield_a 14;		// reference applets/KeyStorageApplet.cipherKey
+					aload_0;
+					bspush 13;
+					sconst_0;
+					invokestatic 53;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 15;		// reference applets/KeyStorageApplet.cipher
+					aload_0;
+					new 55;		// applets/KeyStorageApplet$HMAC
+					dup;
+					sconst_4;
+					sconst_0;
+					invokestatic 56;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					bspush 64;
+					invokespecial 57;		// applets/KeyStorageApplet$HMAC.<init>(Ljavacard/security/MessageDigest;S)V
+					putfield_a 16;		// reference applets/KeyStorageApplet.mac
+					aload_0;
+					new 59;		// applets/KeyStorageApplet$HMACVerifier
+					dup;
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					invokespecial 60;		// applets/KeyStorageApplet$HMACVerifier.<init>(Lapplets/KeyStorageApplet$HMAC;)V
+					putfield_a 17;		// reference applets/KeyStorageApplet.macVerifier
+					aload_0;
+					sconst_2;
+					invokestatic 62;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					putfield_a 18;		// reference applets/KeyStorageApplet.secureRandom
+					aload_0;
+					sspush 10752;
+					newarray 11;
+					putfield_a 19;		// reference applets/KeyStorageApplet.keyStore
+					return;
+		}
+
+		.method private setDHKeyParams()V {
+			.stack 5;
+			.locals 2;
+
+				L0:	sconst_1;
+					sstore_1;
+					sload_1;
+					getstatic_a 65;		// reference applets/KeyStorageApplet.EC_FP_G_X
+					arraylength;
+					sadd;
+					sstore_1;
+					sload_1;
+					getstatic_a 66;		// reference applets/KeyStorageApplet.EC_FP_G_Y
+					arraylength;
+					sadd;
+					sstore_1;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					sconst_4;
+					bastore;
+					sconst_1;
+					sstore_2;
+					getstatic_a 65;		// reference applets/KeyStorageApplet.EC_FP_G_X
+					sconst_0;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sload_2;
+					getstatic_a 65;		// reference applets/KeyStorageApplet.EC_FP_G_X
+					arraylength;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					sstore_2;
+					getstatic_a 66;		// reference applets/KeyStorageApplet.EC_FP_G_Y
+					sconst_0;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sload_2;
+					getstatic_a 66;		// reference applets/KeyStorageApplet.EC_FP_G_Y
+					arraylength;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					getstatic_a 68;		// reference applets/KeyStorageApplet.EC_FP_P
+					sconst_0;
+					getstatic_a 68;		// reference applets/KeyStorageApplet.EC_FP_P
+					arraylength;
+					invokeinterface 4 43 4;		// javacard/security/ECPublicKey
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					getstatic_a 69;		// reference applets/KeyStorageApplet.EC_FP_A
+					sconst_0;
+					getstatic_a 69;		// reference applets/KeyStorageApplet.EC_FP_A
+					arraylength;
+					invokeinterface 4 43 7;		// javacard/security/ECPublicKey
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					getstatic_a 70;		// reference applets/KeyStorageApplet.EC_FP_B
+					sconst_0;
+					getstatic_a 70;		// reference applets/KeyStorageApplet.EC_FP_B
+					arraylength;
+					invokeinterface 4 43 8;		// javacard/security/ECPublicKey
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					sload_1;
+					invokeinterface 4 43 9;		// javacard/security/ECPublicKey
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					getstatic_a 71;		// reference applets/KeyStorageApplet.EC_FP_R
+					sconst_0;
+					getstatic_a 71;		// reference applets/KeyStorageApplet.EC_FP_R
+					arraylength;
+					invokeinterface 4 43 10;		// javacard/security/ECPublicKey
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					sconst_1;
+					invokeinterface 2 43 11;		// javacard/security/ECPublicKey
+					return;
+		}
+
+		.method private resetSession()V {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sconst_0;
+					putfield_s 5;		// short applets/KeyStorageApplet.state
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 5;
+			.locals 4;
+
+				L0:	aload_0;
+					sload_1;
+					sinc 1 1;
+					baload;
+					sstore_3;
+					sload_1;
+					sload_3;
+					sadd;
+					sstore_1;
+					aload_0;
+					sload_1;
+					sinc 1 1;
+					baload;
+					sstore 4;
+					sload_1;
+					sload 4;
+					sadd;
+					sstore_1;
+					aload_0;
+					sload_1;
+					sinc 1 1;
+					baload;
+					sstore 5;
+					new 72;		// applets/KeyStorageApplet
+					dup;
+					aload_0;
+					sload_1;
+					sload 5;
+					invokespecial 73;		// applets/KeyStorageApplet.<init>([BSB)V
+					astore 6;
+					aload 6;
+					invokevirtual 74;		// register()V
+					return;
+		}
+
+		.method private fillPubKey([BS)S {
+			.stack 3;
+			.locals 8;
+
+				L0:	sconst_0;
+					sstore_3;
+					getfield_a_this 8;		// reference applets/KeyStorageApplet.signingKeyPair
+					invokevirtual 42;		// getPublic()Ljavacard/security/PublicKey;
+					checkcast 0 75;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					astore 4;
+					sload_2;
+					sstore 5;
+					sload_2;
+					sconst_2;
+					sadd;
+					sstore 6;
+					aload 4;
+					aload_1;
+					sload 6;
+					invokeinterface 3 75 5;		// javacard/security/RSAPublicKey
+					sstore 7;
+					aload_1;
+					sload 5;
+					sload 7;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					sinc 3 2;
+					sload_3;
+					sload 7;
+					sadd;
+					sstore_3;
+					sload 6;
+					sload 7;
+					sadd;
+					sstore 8;
+					sload 8;
+					sconst_2;
+					sadd;
+					sstore 9;
+					aload 4;
+					aload_1;
+					sload 9;
+					invokeinterface 3 75 4;		// javacard/security/RSAPublicKey
+					sstore 10;
+					aload_1;
+					sload 8;
+					sload 10;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					sinc 3 2;
+					sload_3;
+					sload 10;
+					sadd;
+					sstore_3;
+					sload_3;
+					sreturn;
+		}
+
+		.method private dhHandshake(Ljavacard/framework/APDU;)S {
+			.stack 6;
+			.locals 15;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 64;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 77;		// getIncomingLength()S
+					sstore_3;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					sstore 4;
+					aload_2;
+					sload 4;
+					invokestatic 78;		// applets/KeyStorageApplet.readShort([BS)S
+					sstore 5;
+					sload 4;
+					sconst_2;
+					sadd;
+					sstore 6;
+					getfield_a_this 10;		// reference applets/KeyStorageApplet.dhKeyPair
+					invokevirtual 36;		// genKeyPair()V
+					getfield_a_this 13;		// reference applets/KeyStorageApplet.sessKeyAgreement
+					getfield_a_this 12;		// reference applets/KeyStorageApplet.dhPrivKey
+					invokevirtual 79;		// init(Ljavacard/security/PrivateKey;)V
+					getfield_a_this 13;		// reference applets/KeyStorageApplet.sessKeyAgreement
+					aload_2;
+					sload 6;
+					sload 5;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					invokevirtual 80;		// generateSecret([BSS[BS)S
+					sstore 7;
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					sload 7;
+					invokevirtual 81;		// setKey([BSS)V
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					getstatic_a 82;		// reference applets/KeyStorageApplet.KEY_LABEL_ENC
+					sconst_0;
+					getstatic_a 82;		// reference applets/KeyStorageApplet.KEY_LABEL_ENC
+					arraylength;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					invokevirtual 46;		// sign([BSS[BS)V
+					getfield_a_this 14;		// reference applets/KeyStorageApplet.cipherKey
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					invokeinterface 3 51 4;		// javacard/security/AESKey
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					getstatic_a 83;		// reference applets/KeyStorageApplet.KEY_LABEL_AUTH
+					sconst_0;
+					getstatic_a 83;		// reference applets/KeyStorageApplet.KEY_LABEL_AUTH
+					arraylength;
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					invokevirtual 46;		// sign([BSS[BS)V
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					getfield_a_this 6;		// reference applets/KeyStorageApplet.auxBuffer
+					sconst_0;
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					invokevirtual 49;		// getLength()S
+					invokevirtual 81;		// setKey([BSS)V
+					getfield_a_this 9;		// reference applets/KeyStorageApplet.signature
+					invokevirtual 84;		// getLength()S
+					sstore 8;
+					sload 4;
+					sstore 9;
+					sload 9;
+					sconst_2;
+					sadd;
+					sstore 10;
+					sload 10;
+					sload 8;
+					sadd;
+					sstore 11;
+					sload 11;
+					sconst_2;
+					sadd;
+					sstore 12;
+					aload_2;
+					sload 4;
+					aload_2;
+					sload 11;
+					sconst_2;
+					sload 5;
+					sadd;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sload 12;
+					sload 5;
+					sadd;
+					sstore 13;
+					sload 13;
+					sconst_2;
+					sadd;
+					sstore 14;
+					getfield_a_this 11;		// reference applets/KeyStorageApplet.dhPubKey
+					aload_2;
+					sload 14;
+					invokeinterface 3 43 19;		// javacard/security/ECPublicKey
+					sstore 15;
+					aload_2;
+					sload 13;
+					sload 15;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					sconst_2;
+					sstore 16;
+					sload 16;
+					sload 5;
+					sadd;
+					sstore 16;
+					sinc 16 2;
+					sload 16;
+					sload 15;
+					sadd;
+					sstore 16;
+					getfield_a_this 9;		// reference applets/KeyStorageApplet.signature
+					aload_2;
+					sload 11;
+					sload 16;
+					aload_2;
+					sload 10;
+					invokevirtual 85;		// sign([BSS[BS)S
+					pop;
+					aload_2;
+					sload 9;
+					sload 8;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					aload_0;
+					sconst_0;
+					putfield_s 20;		// short applets/KeyStorageApplet.seqNum
+					aload_0;
+					sconst_1;
+					putfield_s 5;		// short applets/KeyStorageApplet.state
+					sload 14;
+					sload 9;
+					ssub;
+					sload 15;
+					sadd;
+					sreturn;
+		}
+
+		.method  InsCommand(Ljavacard/framework/APDU;)S 128 {
+			.stack 6;
+			.locals 10;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_1;
+					invokevirtual 64;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 77;		// getIncomingLength()S
+					sstore_3;
+					aload_1;
+					invokevirtual 21;		// getOffsetCdata()S
+					sstore 4;
+					sload 4;
+					bspush 32;
+					sadd;
+					sstore 5;
+					sload 5;
+					sconst_2;
+					sadd;
+					sstore 6;
+					sload 6;
+					bspush 16;
+					sadd;
+					sstore 7;
+					sload 4;
+					sload_3;
+					sadd;
+					sstore 8;
+					getfield_a_this 17;		// reference applets/KeyStorageApplet.macVerifier
+					aload_2;
+					sload 5;
+					sload 8;
+					sload 5;
+					ssub;
+					aload_2;
+					sload 4;
+					invokevirtual 87;		// verify([BSS[BS)Z
+					ifne L2;
+				L1:	sspush 27264;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_2;
+					sload 5;
+					invokestatic 78;		// applets/KeyStorageApplet.readShort([BS)S
+					sstore 9;
+					sload 9;
+					getfield_s_this 20;		// short applets/KeyStorageApplet.seqNum
+					if_scmpeq L4;
+				L3:	sspush 27264;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 15;		// reference applets/KeyStorageApplet.cipher
+					getfield_a_this 14;		// reference applets/KeyStorageApplet.cipherKey
+					sconst_1;
+					aload_2;
+					sload 6;
+					bspush 16;
+					invokevirtual 88;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 15;		// reference applets/KeyStorageApplet.cipher
+					aload_2;
+					sload 7;
+					sload 8;
+					sload 7;
+					ssub;
+					aload_2;
+					sload 7;
+					invokevirtual 89;		// doFinal([BSS[BS)S
+					pop;
+					aload_0;
+					aload_2;
+					sload 7;
+					invokespecial 90;		// applets/KeyStorageApplet.processCommand([BS)S
+					sstore 10;
+					sload 10;
+					bspush 16;
+					srem;
+					sstore 11;
+					sload 11;
+					ifeq L6;
+				L5:	sload 10;
+					bspush 16;
+					sload 11;
+					ssub;
+					sadd;
+					sstore 10;
+				L6:	getfield_a_this 18;		// reference applets/KeyStorageApplet.secureRandom
+					aload_2;
+					sload 6;
+					bspush 16;
+					invokevirtual 91;		// generateData([BSS)V
+					getfield_a_this 15;		// reference applets/KeyStorageApplet.cipher
+					getfield_a_this 14;		// reference applets/KeyStorageApplet.cipherKey
+					sconst_2;
+					aload_2;
+					sload 6;
+					bspush 16;
+					invokevirtual 88;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 15;		// reference applets/KeyStorageApplet.cipher
+					aload_2;
+					sload 7;
+					sload 10;
+					aload_2;
+					sload 7;
+					invokevirtual 89;		// doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sload 5;
+					getfield_s_this 20;		// short applets/KeyStorageApplet.seqNum
+					sconst_1;
+					sadd;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					getfield_a_this 16;		// reference applets/KeyStorageApplet.mac
+					aload_2;
+					sload 5;
+					sload 10;
+					sload 7;
+					sadd;
+					sload 5;
+					ssub;
+					aload_2;
+					sload 4;
+					invokevirtual 46;		// sign([BSS[BS)V
+					aload_0;
+					getfield_s_this 20;		// short applets/KeyStorageApplet.seqNum
+					sconst_2;
+					sadd;
+					putfield_s 20;		// short applets/KeyStorageApplet.seqNum
+					sload 7;
+					sload 10;
+					sadd;
+					sload 4;
+					ssub;
+					sreturn;
+		}
+
+		.method private commandAuth([BSSS)S {
+			.stack 4;
+			.locals 0;
+
+				L0:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					sconst_1;
+					if_scmpeq L2;
+				L1:	sspush 27014;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload_3;
+					bspush 64;
+					if_scmple L4;
+				L3:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 7;		// reference applets/KeyStorageApplet.masterPassword
+					aload_1;
+					sload_2;
+					sload_3;
+					s2b;
+					invokevirtual 92;		// check([BSB)Z
+					ifne L6;
+				L5:	aload_0;
+					invokespecial 58;		// applets/KeyStorageApplet.resetSession()V
+					sspush 27010;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_0;
+					sconst_2;
+					putfield_s 5;		// short applets/KeyStorageApplet.state
+					sconst_0;
+					sreturn;
+		}
+
+		.method private commandChangePw([BSSS)S {
+			.stack 4;
+			.locals 0;
+
+				L0:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					sconst_2;
+					if_scmpeq L2;
+				L1:	sspush 27014;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload_3;
+					bspush 64;
+					if_scmple L4;
+				L3:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 7;		// reference applets/KeyStorageApplet.masterPassword
+					aload_1;
+					sload_2;
+					sload_3;
+					s2b;
+					invokevirtual 32;		// update([BSB)V
+					sconst_0;
+					sreturn;
+		}
+
+		.method private commandGenKey([BSSS)S {
+			.stack 4;
+			.locals 1;
+
+				L0:	getfield_s_this 5;		// short applets/KeyStorageApplet.state
+					sconst_2;
+					if_scmpeq L2;
+				L1:	sspush 27014;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload_3;
+					sconst_1;
+					if_scmpeq L4;
+				L3:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_1;
+					sload_2;
+					baload;
+					sstore 5;
+					sload 5;
+					ifle L6;
+				L5:	sload 5;
+					sspush 128;
+					if_scmple L7;
+				L6:	sspush 27264;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	getfield_a_this 18;		// reference applets/KeyStorageApplet.secureRandom
+					aload_1;
+					sload 4;
+					sload 5;
+					invokevirtual 91;		// generateData([BSS)V
+					sload 5;
+					sreturn;
+		}
+
+		.method private findEmptyEntry()S {
+			.stack 3;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore_1;
+				L1:	sload_1;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					arraylength;
+					if_scmpge L5;
+				L2:	getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload_1;
+					bspush 40;
+					sadd;
+					baload;
+					ifne L4;
+				L3:	sload_1;
+					sreturn;
+				L4:	sload_1;
+					sspush 169;
+					sadd;
+					sstore_1;
+					goto L1;
+				L5:	sconst_m1;
+					sreturn;
+		}
+
+		.method private deleteEntry(S)V {
+			.stack 3;
+			.locals 5;
+
+				L0:	sload_1;
+					sstore_2;
+					sload_2;
+					bspush 40;
+					sadd;
+					sstore_3;
+					sload_3;
+					sconst_1;
+					sadd;
+					sstore 4;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload_3;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload_3;
+					sconst_0;
+					bastore;
+					sload 4;
+					sload 5;
+					sadd;
+					sstore 6;
+				L1:	sload 4;
+					sload 6;
+					if_scmpge L3;
+				L2:	getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 4;
+					sconst_0;
+					bastore;
+					sinc 4 1;
+					goto L1;
+				L3:	return;
+		}
+
+		.method private readEntry(S[BS)S {
+			.stack 5;
+			.locals 4;
+
+				L0:	sload_1;
+					sstore 4;
+					sload 4;
+					bspush 40;
+					sadd;
+					sstore 5;
+					sload 5;
+					sconst_1;
+					sadd;
+					sstore 6;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 5;
+					baload;
+					sspush 255;
+					sand;
+					sstore 7;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 6;
+					aload_2;
+					sload_3;
+					sload 7;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sload 7;
+					sreturn;
+		}
+
+		.method private writeEntry(S[BS[BSS)V {
+			.stack 5;
+			.locals 3;
+
+				L0:	sload_1;
+					sstore 7;
+					sload 7;
+					bspush 40;
+					sadd;
+					sstore 8;
+					sload 8;
+					sconst_1;
+					sadd;
+					sstore 9;
+					aload_2;
+					sload_3;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 7;
+					bspush 40;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 8;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					aload 4;
+					sload 5;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload 9;
+					sload 6;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private findEntry([BS)S {
+			.stack 5;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore_3;
+				L1:	sload_3;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					arraylength;
+					if_scmpge L7;
+				L2:	getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload_3;
+					bspush 40;
+					sadd;
+					baload;
+					ifne L4;
+				L3:	goto L6;
+				L4:	aload_1;
+					sload_2;
+					getfield_a_this 19;		// reference applets/KeyStorageApplet.keyStore
+					sload_3;
+					bspush 40;
+					invokestatic 93;		// applets/KeyStorageApplet.arraysEqual([BS[BSS)Z
+					ifeq L6;
+				L5:	sload_3;
+					sreturn;
+				L6:	sload_3;
+					sspush 169;
+					sadd;
+					sstore_3;
+					goto L1;
+				L7:	sconst_m1;
+					sreturn;
+		}
+
+		.method private commandStoreKey([BSSS)S {
+			.stack 7;
+			.locals 4;
+
+				L0:	sload_2;
+					bspush 40;
+					sadd;
+					sstore 5;
+					sload 5;
+					sconst_1;
+					sadd;
+					sstore 6;
+					aload_1;
+					sload 5;
+					baload;
+					sspush 255;
+					sand;
+					sstore 7;
+					sload 7;
+					ifle L2;
+				L1:	sload 7;
+					sspush 128;
+					if_scmple L3;
+				L2:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	aload_0;
+					aload_1;
+					sload_2;
+					invokespecial 94;		// applets/KeyStorageApplet.findEntry([BS)S
+					sstore 8;
+					sload 8;
+					ifge L6;
+				L4:	aload_0;
+					invokespecial 95;		// applets/KeyStorageApplet.findEmptyEntry()S
+					sstore 8;
+					sload 8;
+					ifge L6;
+				L5:	sspush 25088;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	invokestatic 96;		// javacard/framework/JCSystem.beginTransaction()V
+					aload_0;
+					sload 8;
+					aload_1;
+					sload_2;
+					aload_1;
+					sload 6;
+					sload 7;
+					invokespecial 97;		// applets/KeyStorageApplet.writeEntry(S[BS[BSS)V
+					invokestatic 98;		// javacard/framework/JCSystem.commitTransaction()V
+					sconst_0;
+					sreturn;
+		}
+
+		.method private commandLoadKey([BSSS)S {
+			.stack 4;
+			.locals 1;
+
+				L0:	sload_3;
+					bspush 40;
+					if_scmpeq L2;
+				L1:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_0;
+					aload_1;
+					sload_2;
+					invokespecial 94;		// applets/KeyStorageApplet.findEntry([BS)S
+					sstore 5;
+					sload 5;
+					ifge L4;
+				L3:	sspush 27267;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					sload 5;
+					aload_1;
+					sload 4;
+					invokespecial 99;		// applets/KeyStorageApplet.readEntry(S[BS)S
+					sreturn;
+		}
+
+		.method private commandDelKey([BSSS)S {
+			.stack 3;
+			.locals 1;
+
+				L0:	sload_3;
+					bspush 40;
+					if_scmpeq L2;
+				L1:	sspush 26368;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_0;
+					aload_1;
+					sload_2;
+					invokespecial 94;		// applets/KeyStorageApplet.findEntry([BS)S
+					sstore 5;
+					sload 5;
+					ifge L4;
+				L3:	sspush 25088;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	invokestatic 96;		// javacard/framework/JCSystem.beginTransaction()V
+					aload_0;
+					sload 5;
+					invokespecial 100;		// applets/KeyStorageApplet.deleteEntry(S)V
+					invokestatic 98;		// javacard/framework/JCSystem.commitTransaction()V
+					sconst_0;
+					sreturn;
+		}
+
+		.method private commandClose([BSSS)S {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 58;		// applets/KeyStorageApplet.resetSession()V
+					sconst_0;
+					sreturn;
+		}
+
+		.method private processCommand([BS)S {
+			.stack 5;
+			.locals 7;
+
+				L0:	sload_2;
+					sstore_3;
+					sload_2;
+					sconst_1;
+					sadd;
+					sstore 4;
+					sload 4;
+					sconst_2;
+					sadd;
+					sstore 5;
+					sload_2;
+					sstore 6;
+					sload 6;
+					sconst_2;
+					sadd;
+					sstore 7;
+					aload_1;
+					sload_3;
+					baload;
+					sstore 8;
+					aload_1;
+					sload 4;
+					invokestatic 78;		// applets/KeyStorageApplet.readShort([BS)S
+					sstore 9;
+					sload 8;
+					stableswitch L8 0 6 L1 L2 L3 L4 L5 L6 L7;
+				L1:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 101;		// applets/KeyStorageApplet.commandAuth([BSSS)S
+					sstore 9;
+					goto L9;
+				L2:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 102;		// applets/KeyStorageApplet.commandChangePw([BSSS)S
+					sstore 9;
+					goto L9;
+				L3:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 103;		// applets/KeyStorageApplet.commandGenKey([BSSS)S
+					sstore 9;
+					goto L9;
+				L4:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 104;		// applets/KeyStorageApplet.commandStoreKey([BSSS)S
+					sstore 9;
+					goto L9;
+				L5:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 105;		// applets/KeyStorageApplet.commandLoadKey([BSSS)S
+					sstore 9;
+					goto L9;
+				L6:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 106;		// applets/KeyStorageApplet.commandDelKey([BSSS)S
+					sstore 9;
+					goto L9;
+				L7:	aload_0;
+					aload_1;
+					sload 5;
+					sload 9;
+					sload 7;
+					invokespecial 107;		// applets/KeyStorageApplet.commandClose([BSSS)S
+					sstore 9;
+					goto L9;
+				L8:	sspush 27904;
+					invokestatic 86;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	aload_1;
+					sload 6;
+					sload 9;
+					invokestatic 76;		// applets/KeyStorageApplet.writeShort([BSS)V
+					sconst_2;
+					sload 9;
+					sadd;
+					sreturn;
+		}
+
+		.method static access$000([BS[BSS)Z {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					aload_2;
+					sload_3;
+					sload 4;
+					invokestatic 93;		// applets/KeyStorageApplet.arraysEqual([BS[BSS)Z
+					sreturn;
+		}
+
+	}
+
+}
