@@ -156,3 +156,8 @@ The applet requires the card to support the following algorithms:
 The card must also support ISO7816-4 defined extended length APDU messages.
 
 An example of a card that supports all these features is [SmartCafe Expert 6.0 80K Dual](http://www.smartcardfocus.com/shop/ilp/id~684/smartcafe-expert-6-0-80k-dual-/p/index.shtml).
+## Credits
+The Original implimentation of cryptsetup-java card was done by
+Team B &ndash; Manoja Kumar Das, Ondrej Mosnáček, Mmabatho Idah Masemene
+Origitnal Github repository is available at 
+[cryptsetup-javacard](https://github.com/WOnder93/cryptsetup-javacard)
