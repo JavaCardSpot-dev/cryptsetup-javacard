@@ -44,10 +44,10 @@ sourceSets {
         }
     }
 
-    //test {
-    //    java {
-    //        srcDir 'project/src/test/java'
-    //    }
+    test {
+        java {
+            srcDir 'project/JCKeyStorage/test/jckeystorage/'
+        }
     //    resources {
     //        srcDir 'project/src/test/resources'
     //    }
