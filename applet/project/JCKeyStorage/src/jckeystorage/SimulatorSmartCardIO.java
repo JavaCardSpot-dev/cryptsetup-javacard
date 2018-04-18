@@ -11,6 +11,7 @@ import javax.smartcardio.ResponseAPDU;
  * The JCardSim implementation of {@code SmartCardIO}.
  * @author Ondrej Mosnacek &lt;omosnacek@gmail.com&gt;
  */
+ @SuppressWarnings("unchecked")
 public class SimulatorSmartCardIO implements SmartCardIO {
 
     private final JavaxSmartCardInterface simulator;
