@@ -8,10 +8,6 @@ A JavaCard key manager for Cryptsetup.
 :information_source: **IMPORTANT: This repository is used for class [PV204 Security Technologies at Masaryk University](https://is.muni.cz/auth/predmety/predmet?lang=en;setlang=en;pvysl=3141746). All meaningful improvements will be attempted to be pushed to upstream repository in June 2018.**
 
 
-This is the repository of a school project for the [PV204](https://is.muni.cz/predmet/fi/jaro2016/PV204?lang=en) course on the [Faculty of Informatics of the Masaryk University](https://www.fi.muni.cz) in the term spring 2016.
-
-Team B &ndash; Manoja Kumar Das, Ondrej Mosnáček, Mmabatho Idah Masemene
-
 **WARNING:** This is a proof-of-concept project created by computer security students. Under no circumstances should it be considered secure for normal usage, unless it undergoes a proper review by security professionals :)
 
 ## Dependencies
