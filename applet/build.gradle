@@ -46,7 +46,7 @@ sourceSets {
 
     test {
         java {
-            srcDir 'project/JCKeyStorage/test/jckeystorage/'
+            srcDir 'project/JCKeyStorage/src/jckeystorage'
         }
     //    resources {
     //        srcDir 'project/src/test/resources'

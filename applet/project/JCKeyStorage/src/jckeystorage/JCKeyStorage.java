@@ -63,7 +63,7 @@ public class JCKeyStorage {
             }
         }
         
-        @Parameter(names = { "-?", "-h", "--help" }, help = true)
+        //@Parameter(names = { "-?", "-h", "--help" }, help = true)
         private boolean help;
 
         @Parameter(
