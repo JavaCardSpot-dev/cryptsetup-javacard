@@ -10,6 +10,14 @@ A JavaCard key manager for Cryptsetup.
 
 **WARNING:** This is a proof-of-concept project created by computer security students. Under no circumstances should it be considered secure for normal usage, unless it undergoes a proper review by security professionals :)
 
+**Security Improvments in the Code**
+1. The existing code has a consecutive state values. These states are having very sort hamming distance and by fault induction attack, attacker can modify the value of state and can perform sensitive operations. Large hamming distance introduced in the state values.
+
+2. The existing code performs the current state value verification before allowing the user to perform sensitive operation. Attacker might tweak the program flow to skip the verification and can enters into privilege state which allow him to perform sensitive operations. Applet code has been modified and the sensitive operations allowed after double checking of state value (introduced inverted state value checking).
+
+3. In the existing applet code, few methods used boolean comparison before performing the operation. Boolean comparison is susceptible to fault induction attack. Modified the code by introducing constants for success and failure and comparison is made against the values of this constants instead of boolean values.
+
+
 ## Dependencies
 
 Host machine:
